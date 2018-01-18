@@ -139,14 +139,17 @@ int main() {
     L=initlist();
     for(int i=1;i<=3;i++) L=addright(L,i);
     show(L); // 1 2 3
-    searchvalue(&L,2);
+    searchvalue(&L,1);
     L=addright(L,0);
-    show(L); // 1 2 0 3
+    show(L); // 1 0 2 3
     searchvalue(&L,1);
     L=delright(L);
-    show(L); // 1 0 3
-    searchvalue(&L,456);
-    L=addright(L,-1);
-    show(L); // 1 -1 0 3
+    show(L); // 1 2 3
+    searchvalue(&L,2);
+    L=addleft(L,-1);
+    show(L); // 1 -1 2 3
+    searchvalue(&L,3);
+    L=addright (L,0);
+    show(L);// 1 -1 2 3 0
     return 0;
 }
